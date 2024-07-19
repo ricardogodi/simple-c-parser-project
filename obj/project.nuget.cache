@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mQ5GvQgF5ao=",
+  "success": true,
+  "projectFilePath": "/Users/ricardogonzalez/Desktop/simple-c-parser-project/SimpleCParser.fsproj",
+  "expectedPackageFiles": [
+    "/Users/ricardogonzalez/.nuget/packages/fsharp.core/8.0.301/fsharp.core.8.0.301.nupkg.sha512"
+  ],
+  "logs": []
+}

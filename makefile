@@ -1,22 +1,26 @@
-# Makefile
+# Makefile for building F# project using .NET Core
 
-# Define the compiler
-FSC = dotnet fsc
+PROJECT_NAME=SimpleCParser
+OUT=bin/Release/net6.0/$(PROJECT_NAME).dll
 
-# Define the source file
-SRC = main.fs
+# Define a .NET project file and add source files if it doesn't exist
+.PHONY: project
+project:
+	if [ ! -f $(PROJECT_NAME).fsproj ]; then \
+		dotnet new console -lang "F#" -n $(PROJECT_NAME) -o .; \
+		rm -f Program.fs; \
+	fi
+	grep -q '<Compile Include="lexer.fs" />' $(PROJECT_NAME).fsproj || echo '    <Compile Include="lexer.fs" />' >> $(PROJECT_NAME).fsproj
+	grep -q '<Compile Include="parser.fs" />' $(PROJECT_NAME).fsproj || echo '    <Compile Include="parser.fs" />' >> $(PROJECT_NAME).fsproj
+	grep -q '<Compile Include="main.fs" />' $(PROJECT_NAME).fsproj || echo '    <Compile Include="main.fs" />' >> $(PROJECT_NAME).fsproj
 
-# Define the output executable
-OUT = main.exe
+# Target for building the project
+build: project
+	dotnet build -c Release -o bin/Release/net6.0
 
-# Compile the F# program
-compile:
-	$(FSC) -o:$(OUT) $(SRC)
-
-# Run the compiled program
-run: compile
+# Target to run the program
+run: build
 	dotnet $(OUT)
 
-# Clean up compiled files
-clean:
-	rm $(OUT)
+# Default target
+all: build
