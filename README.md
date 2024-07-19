@@ -27,4 +27,4 @@ To use the application, users need to enter the filename when prompted. The prog
 - **Clean the Build**: Use `make clean` to remove all compiled files for a fresh start.
 
 ## Contributions
-While the lexer module and the initial project setup were done by Prof. Joe Hummel of the University of Illinois, Chicago, my specific contribution lies in the development of the `parser.fs` module. This involved implementing the parsing logic.
+While the lexer module and the initial project setup were done by Prof. Joe Hummel of the University of Illinois, Chicago, my specific contribution lies in the development of the `parser.fs` modulem, which involved implementing the parsing logic.
