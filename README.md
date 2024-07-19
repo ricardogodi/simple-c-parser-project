@@ -1,7 +1,7 @@
 # Project Overview
 
 ## Description
-This F# project focuses on parsing "simple C" programs using a lexical analyzer and a recursive-descent parser to check syntax. It simplifies the complex rules of the C programming language, enhancing learning and error detection in coding by students.
+This F# project focuses on parsing “simple C” programs, identifying valid syntax and reporting syntax errors using a lexical analyzer and a recursive-descent parser. It simplifies complex language rules to enhance understanding of programming constructs and parsing techniques.
 
 ## Lexical Analysis
 The `lexer.fs` module converts the source code into tokens essential for parsing. This module handles scanning input text, identifying, and categorizing components like keywords, identifiers, and symbols into tokens.
